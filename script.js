@@ -1,3 +1,5 @@
+import { dataset } from "./dataset.js";
+
 var planeta = new WorldWind.WorldWindow("canvasOne");
 planeta.addLayer(new WorldWind.BMNGOneImageLayer());
 planeta.addLayer(new WorldWind.BMNGLandsatLayer());
@@ -17,7 +19,7 @@ var atributosObjetos = new WorldWind.PlacemarkAttributes(null);
 atributosObjetos.imageSource = WorldWind.configuration.baseUrl + "images/pushpins/white-dot.png";
 
 // Crear objeto
-var posicion = new WorldWind.Position(55.0, -106.0, 100.0);
+var posicion = new WorldWind.Position(15.0, -180.0, 418000.0);
 var objeto = new WorldWind.Placemark(posicion, false, atributosObjetos);
 
 // Mostrar objeto
