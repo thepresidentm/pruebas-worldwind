@@ -3,29 +3,30 @@ import { dataset } from "./dataset.js";
 var planeta = new WorldWind.WorldWindow("canvasOne");
 planeta.addLayer(new WorldWind.BMNGOneImageLayer());
 planeta.addLayer(new WorldWind.BMNGLandsatLayer());
-/* wwd.addLayer(new WorldWind.CompassLayer());*/
-/* wwd.addLayer(new WorldWind.CoordinatesDisplayLayer(wwd)); */
 planeta.addLayer(new WorldWind.ViewControlsLayer(planeta));
 planeta.navigator.range = 300e5;
-/*var posicion = new.;*/
 
-
+var arrayLongitud = dataset.length;
 // Crear capa
 var capaObjetos = new WorldWind.RenderableLayer("objetos");
 planeta.addLayer(capaObjetos);
-
 // Añadir imagen
 var atributosObjetos = new WorldWind.PlacemarkAttributes(null);
 atributosObjetos.imageSource = WorldWind.configuration.baseUrl + "images/pushpins/white-dot.png";
 
-// Crear objeto
-var posicion = new WorldWind.Position(15.0, -180.0, 418000.0);
-var objeto = new WorldWind.Placemark(posicion, false, atributosObjetos);
+// Crear array
+var objetos = new Array();
+var posiciones = new Array();
 
-// Mostrar objeto
-objeto.alwaysOnTop = true;
-capaObjetos.addRenderable(objeto);
+for(var i = 0; i < arrayLongitud; i++){
+    // Crear objeto
+    posiciones[i] = new WorldWind.Position(dataset[i]['lng'], dataset[i]['lat'], dataset[i]['height']);
+    objetos[i] = new WorldWind.Placemark(posiciones[i], false, atributosObjetos);
 
+    // Mostrar objeto
+    objetos[i].alwaysOnTop = true;
+    capaObjetos.addRenderable(objetos[i]);
+}
 /* var placemarkLayer = new WorldWind.RenderableLayer("Placemark");
 wwd.addLayer(placemarkLayer);
 var placemarkAttributes = new WorldWind.PlacemarkAttributes(null);
