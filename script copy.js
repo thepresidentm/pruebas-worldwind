@@ -13,7 +13,7 @@ planeta.addLayer(capaObjetos);
 // Añadir imagen
 var atributosObjetos = new WorldWind.PlacemarkAttributes(null);
 atributosObjetos.imageSource = WorldWind.configuration.baseUrl + "images/pushpins/white-dot.png";
-
+// atributosObjetos.imageSource = "white-dot.png";
 // Crear array
 var objetos = new Array();
 var posiciones = new Array();
