@@ -1,4 +1,4 @@
-const dataset = [
+export const dataset = [
   {
     lng: 136.19618860937516,
     lat: -78.86836212255942,
@@ -600,5 +600,3 @@ const dataset = [
     satellite: 'IRIDIUM-33'
   }
 ];
-
-export {dataset};
