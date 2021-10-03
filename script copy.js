@@ -20,7 +20,7 @@ var posiciones = new Array();
 
 for(var i = 0; i < arrayLongitud; i++){
     // Crear objeto
-    posiciones[i] = new WorldWind.Position(dataset[i]['lng'], dataset[i]['lat'], dataset[i]['height']);
+    posiciones[i] = new WorldWind.Position(dataset[i]['lng'], dataset[i]['lat'], dataset[i]['height']*1000);
     objetos[i] = new WorldWind.Placemark(posiciones[i], false, atributosObjetos);
 
     // Mostrar objeto
