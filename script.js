@@ -1,4 +1,4 @@
-import { dataset } from 'https://thepresidentm.github.io/pruebas-worldwind/dataset.js';
+import { dataset } from './dataset.js';
 
 let planeta, arrayLongitud, capaObjetos, atributosObjetos,
 objetos, posiciones, i;

@@ -1,29 +1,86 @@
-:root{
-    --space: #130020ff;
-    --space-2: #257c9fff;
-}
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+/*Codigo Normilize para reiniciar los estilos del navegador y que el proyecto se vea igual independientemente del navegador que use el usuario*/
 
-html{
-    width: 100%;
-    height: 100%;
-    /* display: table; */
-    background: radial-gradient(var(--space-2), var(--space));
+html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}
+
+:root{
+    --main: #1F1D55;
+    --hover: #3c5d9b;
+    --background: #2D2B2B;
+    --texto: #FFF;
+
+    --fuente: "Space Mono";
+    --titulos: "Rubik";
 }
 
 body{
-    height: 100%;
-    width: 100%;
-    /*display: table-cell;
-    vertical-align: middle;
-    text-align: center;*/
-    margin: 0;
+    background-color: var(--background);
+    font-family: var(--fuente);
+    text-align: center;
+    color: var(--texto);
 }
 
-canvas{
-    width: 100%;
+nav{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    background-color: var(--main);
+}
+
+nav a{
+    text-align: center;
+    color: var(--texto);
+    width: calc(100%-1rem);
+    padding-block: 1rem;
+    padding-inline: .5rem;
+    font-family: var(--titulos);
+    text-decoration: none;
+}
+
+nav a:hover{
+    background-color: var(--hover);
+}
+
+h1, h2, h3{
+    font-family: var(--titulos);
+}
+
+.section{
     height: 100%;
-    touch-action: none;
-    /* width: 100%; */
-    /*height: 100%;*/
-    aspect-ratio: auto 571 / 636;
+    color: var(--texto);
+}
+
+.main{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+footer{
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 5rem calc(65% - 7rem) 35%;
+    background-color: var(--main);
+    padding: 1rem;
+    align-items: center;
+}
+
+footer div img{
+    width: 5rem;
+}
+
+#nombre{
+    text-align: left;
+}
+
+.referencias{
+    text-align: right;
+}
+
+a:visited, a:link{
+    color: var(--fuente);
+}
+
+div canvas{
+    width: 100%;
 }
