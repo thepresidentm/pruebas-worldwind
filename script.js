@@ -1,4 +1,4 @@
-import { dataset } from './dataset.js';
+import { dataset } from 'https://datajson.herokuapp.com/';
 
 let planeta, arrayLongitud, capaObjetos, atributosObjetos,
 objetos, posiciones, i;
